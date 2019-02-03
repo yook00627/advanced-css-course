@@ -4,7 +4,7 @@ This repo contains starter files and the finished project files for all the proj
 
 Plus, I made all the course slides available for download, to make it easier to follow along the conceptual videos.
 
-👇 ***Please read the following Frequently Asked Questions (FAQ) carefully before starting the course*** 👇
+👇 **_Please read the following Frequently Asked Questions (FAQ) carefully before starting the course_** 👇
 
 ## FAQ
 
@@ -55,3 +55,9 @@ Unfortunately, this is quite common. I listed some possible fixes [in this docum
 ### Q12: How do I get my certificate of completion?
 
 **A:** A certificate of completion is provided by Udemy after you complete 100% of the course. After completing the course, just click on the small trophy icon on the course overview page. If you want to change your name on the certificate, please [contact the Udemy support team](https://support.udemy.com/hc/en-us).
+
+# Comment
+
+This project is a couse in Udemy Course Link: <https://www.udemy.com/advanced-css-and-sass/learn/v4/overview>
+
+This project is created by Jonas Schmedtmann
