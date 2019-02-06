@@ -58,6 +58,8 @@ Unfortunately, this is quite common. I listed some possible fixes [in this docum
 
 # Comment
 
-This project is a couse in Udemy Course Link: <https://www.udemy.com/advanced-css-and-sass/learn/v4/overview>
+This project is a course on Udemy Link:<https://www.udemy.com/advanced-css-and-sass/learn/v4/overview>
 
 This project is created by Jonas Schmedtmann
+
+Eddited by Kevin Yook
