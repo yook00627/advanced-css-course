@@ -20,70 +20,7 @@ html {
 Main mody parent
 */
 body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  line-height: 1.7;
-  color: #777;
-  padding: 3rem;
   box-sizing: border-box; }
-
-.header {
-  height: 95vh;
-  /*creating a color gradient and adding a image behind*/
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
-  background-size: cover;
-  background-position: top;
-  /*set to relative because this is parent for the other absolute*/
-  position: relative;
-  /*for creating the angle in the image of the header*/
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
-
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem; }
-
-.header__logo {
-  height: 3.5rem; }
-
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  /*setting the transformation point to middle*/
-  transform: translate(-50%, -50%);
-  text-align: center; }
-
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  /*for prevent shaking of animation*/
-  backface-visibility: hidden;
-  margin-bottom: 6rem; }
-
-/*both main and sub is set to block to make text into block*/
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  /*applying animation in detail*/
-  animation-name: moveInLeft;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-  /*if I want delay in animation or have multiple iteration*/
-  /*
-  animation-delay: 3s;
-  animation-iteration-count: 3;
-  */ }
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.75rem;
-  /*shorter version of applying animation*/
-  animation: moveInRight 1s ease-out; }
 
 /*
 created animation for moveing text in from the left
@@ -100,8 +37,8 @@ the percentage represents the frames percentage
     transform: translate(0); } }
 
 /*
-same animation as above but from the right side
-*/
+  same animation as above but from the right side
+  */
 @keyframes moveInRight {
   0% {
     opacity: 0;
@@ -113,8 +50,8 @@ same animation as above but from the right side
     transform: translate(0); } }
 
 /*
-same animation as above from the bottom
-*/
+  same animation as above from the bottom
+  */
 @keyframes moveInBottom {
   0% {
     opacity: 0;
@@ -123,9 +60,43 @@ same animation as above from the bottom
     opacity: 1;
     transform: translate(0); } }
 
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  /*for prevent shaking of animation*/
+  backface-visibility: hidden;
+  margin-bottom: 6rem; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    /*applying animation in detail*/
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /*if I want delay in animation or have multiple iteration*/
+    /*
+	animation-delay: 3s;
+	animation-iteration-count: 3;
+	*/ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    /*shorter version of applying animation*/
+    animation: moveInRight 1s ease-out; }
+
 /*button link and visted are subclasses and they are for linking and when you click on it*/
-.btn:link,
-.btn:visited {
+.btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
@@ -135,12 +106,13 @@ same animation as above from the bottom
   position: relative;
   font-size: 1.6rem; }
 
-/*subclass when hover button*/
 .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }
 
-/*subclass active when clicked*/
 .btn:active {
   transform: translateY(-1px);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
@@ -148,10 +120,9 @@ same animation as above from the bottom
 .btn--white {
   background-color: #fff;
   color: #777; }
+  .btn--white:after {
+    background-color: #fff; }
 
-/*after is used to create zoom effect when hovering over
-all propert is the same as the other btn class
-*/
 .btn::after {
   content: "";
   display: inline-block;
@@ -164,14 +135,31 @@ all propert is the same as the other btn class
   z-index: -1;
   transition: all 0.4s; }
 
-.btn--white:after {
-  background-color: #fff; }
-
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0; }
-
 .btn--animated {
   animation: moveInBottom 0.5s ease-out 0.75s;
   /*start animation from frame 0*/
   animation-fill-mode: backwards; }
+
+.header {
+  height: 95vh;
+  /*creating a color gradient and adding a image behind*/
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  /*set to relative because this is parent for the other absolute*/
+  position: relative;
+  /*for creating the angle in the image of the header*/
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /*setting the transformation point to middle*/
+    transform: translate(-50%, -50%);
+    text-align: center; }
