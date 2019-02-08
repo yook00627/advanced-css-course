@@ -1,3 +1,11 @@
+//variables
+$color-primary: #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
+
+$color-grey-dark: #777;
+$color-white: #fff;
+
 /*
 This is the universal selector for creating a default for all the element
 margin and padding is set to 0 because default is not
@@ -8,13 +16,14 @@ box sizing border-box is set to have the width and height not added in to margin
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: inherit; }
+  box-sizing: inherit;
+}
 
 /*creating a root for rem reference*/
 html {
   /*default 16px convert to base 10*/
-  font-size: 62.5%;
-  /*10px*/ }
+  font-size: 62.5%; /*10px*/
+}
 
 /*
 Main mody parent
@@ -23,28 +32,38 @@ body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   line-height: 1.7;
-  color: #777;
+  color: $color-grey-dark;
   padding: 3rem;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 .header {
   height: 95vh;
   /*creating a color gradient and adding a image behind*/
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/hero.jpg);
   background-size: cover;
   background-position: top;
   /*set to relative because this is parent for the other absolute*/
   position: relative;
+
   /*for creating the angle in the image of the header*/
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
 
 .header__logo-box {
   position: absolute;
   top: 4rem;
-  left: 4rem; }
+  left: 4rem;
+}
 
 .header__logo {
-  height: 3.5rem; }
+  height: 3.5rem;
+}
 
 .header__text-box {
   position: absolute;
@@ -52,14 +71,19 @@ body {
   left: 50%;
   /*setting the transformation point to middle*/
   transform: translate(-50%, -50%);
-  text-align: center; }
+
+  text-align: center;
+}
 
 .heading-primary {
-  color: #fff;
+  color: $color-white;
   text-transform: uppercase;
+
   /*for prevent shaking of animation*/
   backface-visibility: hidden;
-  margin-bottom: 6rem; }
+
+  margin-bottom: 6rem;
+}
 
 /*both main and sub is set to block to make text into block*/
 .heading-primary--main {
@@ -67,6 +91,7 @@ body {
   font-size: 6rem;
   font-weight: 400;
   letter-spacing: 3.5rem;
+
   /*applying animation in detail*/
   animation-name: moveInLeft;
   animation-duration: 1s;
@@ -75,15 +100,18 @@ body {
   /*
   animation-delay: 3s;
   animation-iteration-count: 3;
-  */ }
+  */
+}
 
 .heading-primary--sub {
   display: block;
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 1.75rem;
+
   /*shorter version of applying animation*/
-  animation: moveInRight 1s ease-out; }
+  animation: moveInRight 1s ease-out;
+}
 
 /*
 created animation for moveing text in from the left
@@ -92,12 +120,18 @@ the percentage represents the frames percentage
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-10rem); }
+    transform: translateX(-10rem);
+  }
+
   80% {
-    transform: translateX(1rem); }
+    transform: translateX(1rem);
+  }
+
   100% {
     opacity: 1;
-    transform: translate(0); } }
+    transform: translate(0);
+  }
+}
 
 /*
 same animation as above but from the right side
@@ -105,12 +139,18 @@ same animation as above but from the right side
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(10rem); }
+    transform: translateX(10rem);
+  }
+
   80% {
-    transform: translateX(-1rem); }
+    transform: translateX(-1rem);
+  }
+
   100% {
     opacity: 1;
-    transform: translate(0); } }
+    transform: translate(0);
+  }
+}
 
 /*
 same animation as above from the bottom
@@ -118,10 +158,14 @@ same animation as above from the bottom
 @keyframes moveInBottom {
   0% {
     opacity: 0;
-    transform: translateY(3rem); }
+    transform: translateY(3rem);
+  }
+
   100% {
     opacity: 1;
-    transform: translate(0); } }
+    transform: translate(0);
+  }
+}
 
 /*button link and visted are subclasses and they are for linking and when you click on it*/
 .btn:link,
@@ -133,21 +177,24 @@ same animation as above from the bottom
   border-radius: 10rem;
   transition: all 0.2s;
   position: relative;
-  font-size: 1.6rem; }
+  font-size: 1.6rem;
+}
 
 /*subclass when hover button*/
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
-
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
 /*subclass active when clicked*/
 .btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
 
 .btn--white {
-  background-color: #fff;
-  color: #777; }
+  background-color: $color-white;
+  color: $color-grey-dark;
+}
 
 /*after is used to create zoom effect when hovering over
 all propert is the same as the other btn class
@@ -162,16 +209,20 @@ all propert is the same as the other btn class
   top: 0;
   left: 0;
   z-index: -1;
-  transition: all 0.4s; }
+  transition: all 0.4s;
+}
 
 .btn--white:after {
-  background-color: #fff; }
+  background-color: $color-white;
+}
 
 .btn:hover::after {
   transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0; }
+  opacity: 0;
+}
 
 .btn--animated {
   animation: moveInBottom 0.5s ease-out 0.75s;
   /*start animation from frame 0*/
-  animation-fill-mode: backwards; }
+  animation-fill-mode: backwards;
+}
