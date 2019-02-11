@@ -1,3 +1,4 @@
+//fixes issue with background color when using float
 @mixin clearfix {
   &:after {
     content: "";

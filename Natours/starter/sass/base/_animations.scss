@@ -1,7 +1,5 @@
-/*
-created animation for moveing text in from the left
-the percentage represents the frames percentage
-*/
+//created animation for moveing text in from the left
+//the percentage represents the frames percentage
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -18,9 +16,7 @@ the percentage represents the frames percentage
   }
 }
 
-/*
-  same animation as above but from the right side
-  */
+//same animation as above but from the right side
 @keyframes moveInRight {
   0% {
     opacity: 0;
@@ -37,9 +33,7 @@ the percentage represents the frames percentage
   }
 }
 
-/*
-  same animation as above from the bottom
-  */
+//same animation as above from the bottom
 @keyframes moveInBottom {
   0% {
     opacity: 0;
