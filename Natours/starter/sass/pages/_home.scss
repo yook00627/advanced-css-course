@@ -37,3 +37,37 @@
   position: relative;
   padding: 15rem 0;
 }
+
+//parent section for all bookings
+.section-book {
+  padding: 15rem 0;
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary-light,
+    $color-primary-dark
+  );
+}
+
+//added in home because it is unique to only the home page
+.book {
+  //can use linear-gradient to create some shapes with the image behind it
+  background-image: linear-gradient(
+      105deg,
+      rgba($color-white, 0.9) 0%,
+      rgba($color-white, 0.9) 50%,
+      transparent 50%
+    ),
+    //color white goes up to 50% and 50% over is transparent with 105 deg angle
+      url(../img/nat-10.jpg);
+  background-size: 100%; //can use cover instead
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+
+  height: 50rem;
+
+  //sizing for the form inside the booking
+  &__form {
+    width: 50%;
+    padding: 6rem;
+  }
+}

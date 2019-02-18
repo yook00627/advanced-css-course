@@ -1,5 +1,7 @@
 //button link and visted are subclasses and they are for linking and when you click on it
 .btn {
+  //added just & to apply not just link and visited
+  &,
   &:link,
   &:visited {
     text-transform: uppercase;
@@ -10,6 +12,10 @@
     transition: all 0.2s;
     position: relative;
     font-size: $default-font-size;
+
+    //Change for the <button> element
+    border: none;
+    cursor: pointer;
   }
   //subclass when hover button
   &:hover {
@@ -21,7 +27,10 @@
     }
   }
   //subclass active when clicked
-  &:active {
+  //added focus for the <button> element
+  &:active,
+  &:focus {
+    outline: none; //for button in creates default outline
     transform: translateY(-1px);
     box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
   }
