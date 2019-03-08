@@ -10,6 +10,16 @@
   font-size: $default-font-size;
   transform: skewX(-12deg);
 
+  @include respond(tab-port) {
+    width: 100%;
+    padding: 4rem;
+    padding-left: 7rem;
+  }
+
+  @include respond(phone) {
+    transform: skewX(0);
+  }
+
   //direct child selector all *
   //currently doesn't work if ther is already a tranform in child
   /*
@@ -33,6 +43,10 @@
     //positioning the actual draw of the circle away from the text
     transform: translateX(-3rem) skewX(12deg); //skewed to counter box skew
     position: relative;
+
+    @include respond(phone) {
+      transform: translateX(-3rem) skewX(0);
+    }
   }
 
   //setting img for the circle
@@ -45,6 +59,10 @@
   //text is skewed to counter box skew
   &__text {
     transform: skewX(12deg);
+
+    @include respond(phone) {
+      transform: skewX(0);
+    }
   }
 
   //adding text into the circle shape

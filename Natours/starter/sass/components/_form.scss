@@ -22,6 +22,10 @@
 
     border-bottom: 3px solid transparent; //for setting inital border on focus so it doesn't shift
 
+    @include respond(tab-port) {
+      width: 100%;
+    }
+
     //when selected show border on the bottom of the input box
     &:focus {
       outline: none;
@@ -61,6 +65,11 @@
   &__radio-group {
     width: 49%;
     display: inline-block;
+
+    @include respond(tab-port) {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
   }
 
   //to hide the default selection radio

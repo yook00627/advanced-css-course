@@ -5,6 +5,10 @@
   font-size: 1.4rem;
   color: $color-grey-light;
 
+  @include respond(tab-port) {
+    padding: 8rem 0;
+  }
+
   &__logo-box {
     text-align: center; //because of the element is considered text centering works
     margin-bottom: 8rem;
@@ -19,6 +23,11 @@
     border-top: 1px solid $color-grey-light-2;
     padding-top: 2rem;
     display: inline-block; //fix line that may go over
+
+    @include respond(tab-port) {
+      width: 100%;
+      text-align: center;
+    }
   }
 
   &__list {
@@ -60,5 +69,10 @@
     padding-top: 2rem;
     width: 80%;
     float: right;
+
+    @include respond(tab-port) {
+      width: 100%;
+      float: none;
+    }
   }
 }

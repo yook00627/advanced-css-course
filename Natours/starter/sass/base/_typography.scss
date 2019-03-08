@@ -4,7 +4,6 @@ body {
   font-weight: 400;
   line-height: 1.7;
   color: $color-grey-dark;
-  padding: 3rem;
 }
 
 //setting typography for first heading h1
@@ -24,6 +23,12 @@ body {
     font-weight: 400;
     letter-spacing: 3.5rem;
 
+    //typography to reduce phone text sizes
+    @include respond(phone) {
+      letter-spacing: 1rem;
+      font-size: 5rem;
+    }
+
     //applying animation in detail
     animation-name: moveInLeft;
     animation-duration: 1s;
@@ -42,6 +47,10 @@ body {
 
     //shorter version of applying animation
     animation: moveInRight 1s ease-out;
+
+    @include respond(phone) {
+      letter-spacing: 0.5rem;
+    }
   }
 }
 
@@ -64,6 +73,13 @@ body {
 
   letter-spacing: 2px;
   transition: all 0.2s;
+
+  @include respond(tab-port) {
+    font-size: 3rem;
+  }
+  @include respond(phone) {
+    font-size: 2.5rem;
+  }
 
   //for scewing the text when hover
   &:hover {
